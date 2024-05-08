@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO film (judul, genre, durasi, sutradara, sinopsis, tanggal_rilis, gambar, harga_tiket) VALUES ('$judul', '$genre', '$durasi', '$sutradara', '$sinopsis', '$tanggal_rilis', '$target_file', '$harga_tiket')";
 
         if (mysqli_query($conn, $sql)) {
-            echo '<script>alert("Data film berhasil disimpan."); window.location = "crud.php"; </script>';
+            echo '<script>alert("Data film berhasil disimpan."); window.location = "film.php"; </script>';
         } else {
             echo "<script>alert('Error: " . $sql . "<br>" . mysqli_error($conn) . "');</script>";
         }
