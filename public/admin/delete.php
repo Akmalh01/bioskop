@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
     mysqli_close($conn);
 
     // Redirect kembali ke halaman utama setelah menghapus produk
-    header("Location: crud.php");
+    header("Location: film.php");
     exit();
 }
 ?>
