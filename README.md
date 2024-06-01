@@ -1,6 +1,6 @@
 1. buat database yang bernama bioskop pada mysql
 
-2. jalankan file migrate.php lalu
+2. jalankan file migrate.php
 
 3. jika sudah berhasil lalu close file migrate.php nya
 
