@@ -51,6 +51,15 @@ $sqlPemesanan = "CREATE TABLE IF NOT EXISTS pemesanan (
     FOREIGN KEY (film_id) REFERENCES film(id)
 )";
 
+// tabel pemilihan tiket
+$pemilihanTiket = "CREATE TABLE IF NOT EXISTS pemilihan_tiket (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    pemesanan_id INT(6) UNSIGNED NOT NULL,
+    jam_tayang TIME NOT NULL,
+    tempat_duduk VARCHAR(10) NOT NULL,
+    FOREIGN KEY (pemesanan_id) REFERENCES pemesanan(id)
+)";
+
 if (mysqli_query($koneksi, $sqlAdmin)) {
     echo "Tabel 'admin' berhasil dibuat\n";
 } else {
@@ -73,6 +82,12 @@ if (mysqli_query($koneksi, $sqlPemesanan)) {
     echo "Tabel 'pemesanan' berhasil dibuat\n";
 } else {
     echo "Error: " . $sqlPemesanan . "<br>" . mysqli_error($koneksi);
+}
+
+if ($conn->query($pemilihanTiket) === TRUE) {
+    echo "Tabel pemilihan_tiket berhasil dibuat";
+} else {
+    echo "Error membuat tabel: " . $conn->error;
 }
 
 // Tutup koneksi
